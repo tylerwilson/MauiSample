@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:MauiSample.Views"
+             xmlns:viewModels="clr-namespace:MauiSample.ViewModels"
+             x:DataType="viewModels:MainViewModel"
+             x:Class="MauiSample.MainPage">
+
+    <AbsoluteLayout>
+        <ScrollView Orientation="Horizontal"
+                    BackgroundColor="White"
+                    AbsoluteLayout.LayoutFlags="HeightProportional,WidthProportional"
+                    AbsoluteLayout.LayoutBounds="0,0,1,1"
+        >
+            <HorizontalStackLayout
+                BindableLayout.ItemsSource="{Binding Items}"
+                Spacing="0"
+                BackgroundColor="BlueViolet">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <views:ControlView ViewModel="{Binding .}" />
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </HorizontalStackLayout>
+        </ScrollView>
+    </AbsoluteLayout>
+
+</ContentPage>
